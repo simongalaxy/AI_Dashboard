@@ -37,7 +37,7 @@ def main():
     df = load_and_preprocess_data(url)
     
     # create a manager and a text generation config.
-    OLLAMA_MODEL_NAME = "phi4-mini:3.8b"
+    OLLAMA_MODEL_NAME = "phi4-mini:latest"
     OLLAMA_API_BASE ="http://localhost:11434/v1"
     
     os.environ["OPENAI_BASE_URL"] = OLLAMA_API_BASE
@@ -51,7 +51,8 @@ def main():
         n=1,
         model=OLLAMA_MODEL_NAME,
         temperature=0.0,
-        use_cache=True
+        use_cache=True,
+        max_tokens=2048
     )
     
     # generate insight.
