@@ -37,7 +37,7 @@ def main():
     df = load_and_preprocess_data(url)
     
     # create a manager and a text generation config.
-    OLLAMA_MODEL_NAME = "qwen2.5-7b"
+    OLLAMA_MODEL_NAME = "phi4-mini:3.8b"
     OLLAMA_API_BASE ="http://localhost:11434/v1"
     
     os.environ["OPENAI_BASE_URL"] = OLLAMA_API_BASE
@@ -60,7 +60,7 @@ def main():
     pprint(summary)
     
     # generate goals.
-    goals = lida.goals(summary, n=10, textgen_config=textgen_config)
+    goals = lida.goals(summary, n=7, textgen_config=textgen_config)
     print("Goals:")
     for i, goal in enumerate(goals, start=1):
         print(f"Goal No. {i}:")
