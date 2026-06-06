@@ -7,16 +7,14 @@ from src.Settings import settings
 
 # load env settings.
     
-os.environ["OPENAI_API_BASE"] = settings.openai_api_base
-os.environ["OPENAI_API_KEY"] = settings.openai_api_key
+os.environ["API_BASE"] = settings.api_base
+os.environ["API_KEY"] = settings.api_key
 
 class DataAnalyzer:
     def __init__(self):
         self.text_gen = llm(
             provider=settings.model_provider,
             model=settings.model_name
-            # api_key=settings.openai_api_key,
-            # api_base=settings.openai_api_base
         )
         self.lida = Manager(text_gen=self.text_gen)
         self.textgen_config = TextGenerationConfig(
