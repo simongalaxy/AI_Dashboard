@@ -1,102 +1,34 @@
 import os
 import pandas as pd
-from lida import Manager, TextGenerationConfig, llm
 
-from pprint import pprint
+from src.DataProcessor import load_data_from_xml, preprocess_data, show_data_info
+from src.DataAnalyzer import DataAnalyzer
+from src.Settings import settings
 
-
-# load and pre-process the data, and save it to a CSV file.
-def load_and_preprocess_data(url: str) -> pd.DataFrame:
-    df = pd.read_xml(url, parser="lxml")
-    
-    # pre-process the data here if needed.
-    report_period_cols = ["Financial_year", "Round"]
-    project_no_cols = ["Year", "Institution_code", "Item_no", "Batch_no"]
-    
-    df[report_period_cols] = df["report-period"].str.split("(", expand=True, n=1)
-    df[project_no_cols] = df["project-no"].str.split(".", expand=True, n=len(project_no_cols)-1)
-    
-    df["Round"] = df["Round"].str.replace(")", "")
-    df["Financial_year"] = df["Financial_year"].str.strip()
-    df.drop(columns=["report-period", "project-no"], inplace=True)
-    
-    
-    print(df.head(6))
-    print(df.info())
-    
-    # save the dataframe to a CSV file.
-    df.to_csv("./data/ppr-granted.csv", index=False)
-    
-    return df
 
 
 def main():
+    # load settings.
+    print("Loading settings...")
+    print(f"Model Name: {settings.model_name}")
+    print(f"Model Provider: {settings.model_provider}")
+    print(f"API Base: {settings.api_base}")
+
     # load data from the XML file.
     url = "https://www.cepu.gov.hk/en/filestore/ppr-granted.xml"
     
-    df = load_and_preprocess_data(url)
-    
-    # create a manager and a text generation config.
-    OLLAMA_MODEL_NAME = "phi4-mini:latest"
-    OLLAMA_API_BASE ="http://localhost:11434/v1"
-    
-    os.environ["OPENAI_BASE_URL"] = OLLAMA_API_BASE
-    os.environ["OPENAI_API_KEY"] = "ollama"
-    
-    lida_llm = llm(provider="openai")
-    
-    lida=Manager(text_gen=lida_llm)
-    
-    textgen_config = TextGenerationConfig(
-        n=1,
-        model=OLLAMA_MODEL_NAME,
-        temperature=0.0,
-        use_cache=True,
-        max_tokens=2048
-    )
-    
-    # generate insight.
-    summary = lida.summarize(df, textgen_config=textgen_config)
-    print("Summary:")
-    pprint(summary)
-    
-    # generate goals.
-    goals = lida.goals(summary, n=7, textgen_config=textgen_config)
-    print("Goals:")
-    for i, goal in enumerate(goals, start=1):
-        print(f"Goal No. {i}:")
-        pprint(goal)
-        
-        # try:
-        #     action_plan = lida.action_plan(goal, textgen_config=textgen_config)
-        #     print("Action Plan:")
-        #     print(action_plan)
-        # except Exception as e:
-        #     print(f"Error generating action plan for Goal No. {i}: {e}")
-        # print("-" * 50)
-        
-        charts = lida.visualize(
-            summary=summary, 
-            goal=goal, 
-            library="plotly",
-            textgen_config=textgen_config
-        )
-        
-        if charts:
-            print("Charts:")
-            for chart in charts:
-                print(chart)
-        else:
-            print("No charts generated.")
-        print("=" * 50) 
-        
-        
-    
-    # # generate visualization.
-    # viz = lida.visualize(df, textgen_config=textgen_config)
-    # print("Visualization:")
-    # print(viz)
+    df_raw = load_data_from_xml(url=url)
+    df = preprocess_data(df_raw)
+    show_data_info(df)
 
+    # initialize the DataAnalyzer.
+    analyzer = DataAnalyzer()
+    
+    # summarize the data.
+    summary = analyzer.summarize_df(df)
+    print("Summary:")
+    for i, item in enumerate(summary, start=1):
+        print(f"{i}. {item}")
     
     
 if __name__ == "__main__":
