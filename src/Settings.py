@@ -10,7 +10,12 @@ class Settings(BaseSettings):
     # define the settings for the application.
     model_name: str
     model_provider: str
-    api_base: str
+    openai_api_base: str
+    openai_api_key: str
+
+    # model_provider: str
+    # huggingface_token: str
+    # huggingface_model: str
     
     # pydantic settings config.
     model_config = SettingsConfigDict(
