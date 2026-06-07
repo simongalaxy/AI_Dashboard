@@ -34,5 +34,7 @@ def show_data_info(df: pd.DataFrame) -> None:
     print(df.info())
     print("\nData Sample:")
     print(df.head(5))
+    print("#" * 50)
+    print("\n")
     
     return

@@ -10,8 +10,8 @@ class Settings(BaseSettings):
     # define the settings for the application.
     model_name: str
     model_provider: str
-    api_base: str
-    api_key: str
+    openai_api_base: str
+    openai_api_key: str
 
     # model_provider: str
     # huggingface_token: str
@@ -25,4 +25,4 @@ class Settings(BaseSettings):
     )
 
 # Singleton instance of the settings.
-settings = Settings()
+settings = Settings() # type: ignore

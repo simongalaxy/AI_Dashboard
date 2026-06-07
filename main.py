@@ -1,4 +1,4 @@
-import os
+import os, json
 import pandas as pd
 from pprint import pprint
 
@@ -21,6 +21,10 @@ def main():
     df = preprocess_data(df_raw)
     show_data_info(df)
 
+    # goals settings:
+    total_goals = 10
+    persona = "An Operationn Manager who monitors overall situation of a funding scheme"
+    
     # initialize the DataAnalyzer.
     analyzer = DataAnalyzer()
     
@@ -28,7 +32,7 @@ def main():
     summary = analyzer.summarize_df(df)
     
     # generate goals based on the summary.
-    goals = analyzer.generate_goals(summary=summary, n=3)
+    goals = analyzer.generate_goals(summary=summary, n=total_goals, persona=persona)
     
     # visualize the first goal.
     charts = analyzer.visualize_goal(summary=summary, goals=goals)
