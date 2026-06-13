@@ -1,0 +1,677 @@
+2026-06-13 22:13:08 - __main__ - INFO - Class Logger initiated.
+2026-06-13 22:13:13 - llmx - INFO - Info: LLMX_CONFIG_PATH environment variable is not set to a valid config file. Using default config file at '/home/simon/Documents/AI_Dashboard/.venv/lib/python3.13/site-packages/llmx/configs/config.default.yml'.
+2026-06-13 22:13:13 - llmx - INFO - Loaded config from '/home/simon/Documents/AI_Dashboard/.venv/lib/python3.13/site-packages/llmx/configs/config.default.yml'.
+2026-06-13 22:13:13 - lida - INFO - Provider is not set, using default provider - openai
+2026-06-13 22:13:13 - __main__ - INFO - Data Type of Summary: <class 'dict'>
+2026-06-13 22:13:13 - __main__ - INFO - Summary of the DataFrame: 
+{'dataset_description': '',
+ 'field_names': ['principal-invest',
+                 'institution',
+                 'title',
+                 'duration',
+                 'funding',
+                 'areas',
+                 'Financial_year',
+                 'Round',
+                 'Year',
+                 'Institution_code',
+                 'Item_no',
+                 'Batch_no'],
+ 'fields': [{'column': 'principal-invest',
+             'properties': {'description': '',
+                            'dtype': 'str',
+                            'num_unique_values': 275,
+                            'samples': ['Dr CHEUNG Chi Kin, Kelvin',
+                                        'Dr KING Ronnel Bornasal',
+                                        'Prof YIP Ngai Ming'],
+                            'semantic_type': ''}},
+            {'column': 'institution',
+             'properties': {'description': '',
+                            'dtype': 'str',
+                            'num_unique_values': 29,
+                            'samples': ['One Country Two Systems Youth Forum',
+                                        'City University of Hong Kong ',
+                                        'Civic Exchange'],
+                            'semantic_type': ''}},
+            {'column': 'title',
+             'properties': {'description': '',
+                            'dtype': 'str',
+                            'num_unique_values': 324,
+                            'samples': ['How to Increase the Demand for '
+                                        'Private Long-term Care Insurance in '
+                                        'Hong Kong?',
+                                        'Facilitating the Diffusion of '
+                                        'Building Information Modeling (BIM) '
+                                        'in the Hong Kong Construction '
+                                        'Industry: A Network Perspective',
+                                        'Defining Sonhood: The Exploration of '
+                                        'Lived Experience of the Caregiving '
+                                        'Sons in Their Late Adulthood in Hong '
+                                        'Kong'],
+                            'semantic_type': ''}},
+            {'column': 'duration',
+             'properties': {'description': '',
+                            'dtype': 'number',
+                            'max': 24,
+                            'min': 6,
+                            'num_unique_values': 12,
+                            'samples': [14, 16, 12],
+                            'semantic_type': '',
+                            'std': 3}},
+            {'column': 'funding',
+             'properties': {'description': '',
+                            'dtype': 'number',
+                            'max': 1636653.0,
+                            'min': 120175.0,
+                            'num_unique_values': 308,
+                            'samples': [743699.0, 373635.0, 242236.0],
+                            'semantic_type': '',
+                            'std': 218780.63442087008}},
+            {'column': 'areas',
+             'properties': {'description': '',
+                            'dtype': 'str',
+                            'num_unique_values': 52,
+                            'samples': ['Political Development and Governance, '
+                                        'Youth Development',
+                                        'Livelihood Issues, Environmental '
+                                        'Protection',
+                                        'Co-operation with the Mainland, '
+                                        'Innovation and Technology'],
+                            'semantic_type': ''}},
+            {'column': 'Financial_year',
+             'properties': {'description': '',
+                            'dtype': 'str',
+                            'num_unique_values': 14,
+                            'samples': ['2022-23', '2024-25', '2013-14'],
+                            'semantic_type': ''}},
+            {'column': 'Round',
+             'properties': {'description': '',
+                            'dtype': 'str',
+                            'num_unique_values': 5,
+                            'samples': ['Second Round',
+                                        'Theme-based',
+                                        'Third Round'],
+                            'semantic_type': ''}},
+            {'column': 'Year',
+             'properties': {'description': '',
+                            'dtype': 'str',
+                            'num_unique_values': 15,
+                            'samples': ['2022', '2024', '2013'],
+                            'semantic_type': ''}},
+            {'column': 'Institution_code',
+             'properties': {'description': '',
+                            'dtype': 'str',
+                            'num_unique_values': 20,
+                            'samples': ['A2', 'B9', 'B24'],
+                            'semantic_type': ''}},
+            {'column': 'Item_no',
+             'properties': {'description': '',
+                            'dtype': 'str',
+                            'num_unique_values': 163,
+                            'samples': ['126', '090', '226'],
+                            'semantic_type': ''}},
+            {'column': 'Batch_no',
+             'properties': {'description': '',
+                            'dtype': 'str',
+                            'num_unique_values': 51,
+                            'samples': ['24B', '23B', '25A'],
+                            'semantic_type': ''}}],
+ 'file_name': '',
+ 'name': ''}
+2026-06-13 22:13:13 - __main__ - INFO - ##################################################
+2026-06-13 22:13:13 - __main__ - INFO - 
+
+2026-06-13 22:13:13 - lida - INFO - Provider is not set, using default provider - openai
+2026-06-13 22:13:13 - __main__ - INFO - Data Type of Goals: <class 'list'>
+2026-06-13 22:13:13 - __main__ - INFO - Generated Goals:
+2026-06-13 22:13:13 - __main__ - INFO - Goal No. 1:
+2026-06-13 22:13:13 - __main__ - INFO - Goal(question='What is the distribution of funding amounts across different financial years?', visualization='histogram of funding by Financial_year', rationale='This tells about the allocation of funds over time and helps in understanding trends.', index=0)
+2026-06-13 22:13:13 - __main__ - INFO - ##################################################
+2026-06-13 22:13:13 - __main__ - INFO - Goal No. 2:
+2026-06-13 22:13:13 - __main__ - INFO - Goal(question='Which institutions have received the most funding?', visualization='bar chart of institution vs. sum(funding)', rationale='Identifies key institutions that are receiving significant support, which can be useful for strategic planning.', index=1)
+2026-06-13 22:13:13 - __main__ - INFO - ##################################################
+2026-06-13 22:13:13 - __main__ - INFO - Goal No. 3:
+2026-06-13 22:13:13 - __main__ - INFO - Goal(question='How does the distribution of funding vary across different rounds and financial years?', visualization='scatter plot of funding vs. Financial_year with color coded by Round', rationale='This helps in identifying any patterns or anomalies in funding allocation over time.', index=2)
+2026-06-13 22:13:13 - __main__ - INFO - ##################################################
+2026-06-13 22:13:13 - __main__ - INFO - Goal No. 4:
+2026-06-13 22:13:13 - __main__ - INFO - Goal(question='What is the average duration of projects funded under different rounds and financial years?', visualization='bar chart of average(duration) by Financial_year and Round', rationale='Provides insights into project timelines and helps in understanding resource planning.', index=3)
+2026-06-13 22:13:13 - __main__ - INFO - ##################################################
+2026-06-13 22:13:13 - __main__ - INFO - Goal No. 5:
+2026-06-13 22:13:13 - __main__ - INFO - Goal(question='Which areas have received the most funding over time?', visualization='line graph of sum(funding) vs. Financial_year with color coded by areas', rationale='Highlights key research areas that are receiving significant support and can inform future funding decisions.', index=4)
+2026-06-13 22:13:13 - __main__ - INFO - ##################################################
+2026-06-13 22:13:13 - __main__ - INFO - Goal No. 6:
+2026-06-13 22:13:13 - __main__ - INFO - Goal(question='How does the distribution of project titles vary across different financial years?', visualization='word cloud of title by Financial_year', rationale='Gives a visual representation of popular research topics over time.', index=5)
+2026-06-13 22:13:13 - __main__ - INFO - ##################################################
+2026-06-13 22:13:13 - __main__ - INFO - Goal No. 7:
+2026-06-13 22:13:13 - __main__ - INFO - Goal(question='What is the relationship between funding and duration for projects in each area?', visualization='scatter plot of funding vs. duration with color coded by areas', rationale='This helps in understanding if longer projects require more funding or not.', index=6)
+2026-06-13 22:13:13 - __main__ - INFO - ##################################################
+2026-06-13 22:13:13 - __main__ - INFO - Goal No. 8:
+2026-06-13 22:13:13 - __main__ - INFO - Goal(question='Which institutions have received the most funding across different rounds and financial years?', visualization='heatmap of sum(funding) vs. Financial_year and Round', rationale='Identifies consistent high-performing institutions that may warrant further support or collaboration.', index=7)
+2026-06-13 22:13:13 - __main__ - INFO - ##################################################
+2026-06-13 22:13:13 - __main__ - INFO - Goal No. 9:
+2026-06-13 22:13:13 - __main__ - INFO - Goal(question='How has the total funding changed over time across different rounds?', visualization='line graph of sum(funding) vs. Year with color coded by Round', rationale='Provides a clear trend analysis of overall funding allocation and helps in budget planning.', index=8)
+2026-06-13 22:13:13 - __main__ - INFO - ##################################################
+2026-06-13 22:13:13 - __main__ - INFO - Goal No. 10:
+2026-06-13 22:13:13 - __main__ - INFO - Goal(question='What is the distribution of project titles across different areas?', visualization='pie chart of count(title) by areas', rationale='Shows the proportion of projects in each area, which can help in understanding research focus and diversification.', index=9)
+2026-06-13 22:13:13 - __main__ - INFO - ##################################################
+2026-06-13 22:13:13 - __main__ - INFO - Visualizing Goal No. 1...
+2026-06-13 22:13:13 - choreographer.browsers.chromium - INFO - Chromium init'ed with kwargs {}
+2026-06-13 22:13:13 - choreographer.browsers.chromium - INFO - Found chromium path: /usr/bin/google-chrome
+2026-06-13 22:13:13 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmpdzl175_s.
+2026-06-13 22:13:13 - choreographer.browser_async - INFO - Opening browser.
+2026-06-13 22:13:13 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmpd2f_qixl.
+2026-06-13 22:13:13 - choreographer.browsers.chromium - INFO - Temporary directory at: /tmp/tmpd2f_qixl
+2026-06-13 22:13:14 - kaleido.kaleido - INFO - Conforming 1 to file:///tmp/tmpdzl175_s/index.html
+2026-06-13 22:13:25 - kaleido.kaleido - INFO - Getting tab from queue (has 1)
+2026-06-13 22:13:25 - kaleido.kaleido - INFO - Got 2A3C
+2026-06-13 22:13:25 - kaleido.kaleido - INFO - Reloading tab 2A3C before return.
+2026-06-13 22:13:25 - kaleido.kaleido - INFO - Putting tab 2A3C back (queue size: 0).
+2026-06-13 22:13:25 - kaleido.kaleido - INFO - Waiting for all cleanups to finish.
+2026-06-13 22:13:25 - kaleido.kaleido - INFO - Exiting Kaleido.
+2026-06-13 22:13:25 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:25 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:25 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:25 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:25 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:25 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:25 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:25 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:25 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:25 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:25 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:25 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:25 - __main__ - INFO - Charts for Goal No. 1:
+2026-06-13 22:13:25 - __main__ - INFO - Explanations:
+2026-06-13 22:13:25 - __main__ - INFO - Explanation No. 1: 
+[{'code': "fig = px.histogram(data, x='Financial_year', y='funding', nbins=10, "
+          'title="Distribution of Funding Amounts Across Different Financial '
+          'Years", labels={\'funding\': \'Funding Amount\', '
+          "'Financial_year': 'Financial Year'})\n"
+          "fig.add_vline(x=data['funding'].mean(), line_color='red', "
+          'annotation_text=f\'Mean: {data["funding"].mean():.2f}\', '
+          'annotation_position="top left")',
+  'explanation': 'The chart is a histogram that visually represents the '
+                 'distribution of funding amounts across different financial '
+                 'years. The x-axis shows the financial years, and the y-axis '
+                 'shows the count or frequency of funding amounts for each '
+                 "year. The title 'Distribution of Funding Amounts Across "
+                 "Different Financial Years' provides context to the viewer. A "
+                 'vertical line at the mean funding amount is added in red '
+                 'with an annotation indicating the exact value.',
+  'section': 'accessibility'},
+ {'code': "data['Financial_year'] = pd.to_datetime(data['Financial_year'], "
+          "errors='coerce')\n"
+          "data = data[pd.notna(data['Financial_year'])]",
+  'explanation': "This code converts the 'Financial_year' column to datetime "
+                 'type and removes any rows where the financial year is not a '
+                 'valid date. This ensures that only complete and accurate '
+                 'financial years are included in the analysis.',
+  'section': 'transformation'},
+ {'code': "fig = px.histogram(data, x='Financial_year', y='funding', nbins=10, "
+          'title="Distribution of Funding Amounts Across Different Financial '
+          'Years", labels={\'funding\': \'Funding Amount\', '
+          "'Financial_year': 'Financial Year'})\n"
+          "fig.add_vline(x=data['funding'].mean(), line_color='red', "
+          'annotation_text=f\'Mean: {data["funding"].mean():.2f}\', '
+          'annotation_position="top left")',
+  'explanation': 'This code creates a histogram using Plotly Express to '
+                 'visualize the distribution of funding amounts across '
+                 'different financial years. The `nbins=10` parameter '
+                 'specifies that 10 bins should be used for the histogram. A '
+                 'vertical line is added at the mean funding amount, which '
+                 'helps in identifying the central tendency of the data.',
+  'section': 'visualization'}]
+2026-06-13 22:13:25 - __main__ - INFO - ##################################################
+2026-06-13 22:13:25 - __main__ - INFO - Visualizing Goal No. 2...
+2026-06-13 22:13:25 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:25 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:25 - choreographer.browsers.chromium - INFO - Chromium init'ed with kwargs {}
+2026-06-13 22:13:25 - choreographer.browsers.chromium - INFO - Found chromium path: /usr/bin/google-chrome
+2026-06-13 22:13:25 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmpr6wacnqw.
+2026-06-13 22:13:25 - choreographer.browser_async - INFO - Opening browser.
+2026-06-13 22:13:25 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmpksdbo18p.
+2026-06-13 22:13:25 - choreographer.browsers.chromium - INFO - Temporary directory at: /tmp/tmpksdbo18p
+2026-06-13 22:13:25 - kaleido.kaleido - INFO - Conforming 1 to file:///tmp/tmpr6wacnqw/index.html
+2026-06-13 22:13:26 - kaleido.kaleido - INFO - Getting tab from queue (has 1)
+2026-06-13 22:13:26 - kaleido.kaleido - INFO - Got 0F15
+2026-06-13 22:13:26 - kaleido.kaleido - INFO - Reloading tab 0F15 before return.
+2026-06-13 22:13:26 - kaleido.kaleido - INFO - Putting tab 0F15 back (queue size: 0).
+2026-06-13 22:13:26 - kaleido.kaleido - INFO - Waiting for all cleanups to finish.
+2026-06-13 22:13:26 - kaleido.kaleido - INFO - Exiting Kaleido.
+2026-06-13 22:13:26 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:26 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:26 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:26 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:26 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:26 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:26 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:26 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:26 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:26 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:26 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:26 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:26 - __main__ - INFO - Charts for Goal No. 2:
+2026-06-13 22:13:26 - __main__ - INFO - Explanations:
+2026-06-13 22:13:26 - __main__ - INFO - Explanation No. 1: 
+[{'code': "fig = px.bar(funding_by_institution, x='institution', y='funding', "
+          "color='institution', title='Institutional Funding Distribution')",
+  'explanation': 'The chart is a bar plot where the x-axis represents '
+                 "'institution' and the y-axis represents 'funding'. Each "
+                 'institution is represented by a different color. The goal of '
+                 'this chart is to visualize the distribution of funding '
+                 'across various institutions, with the height of each bar '
+                 'indicating the total funding received by that institution. '
+                 'The main insights from the chart include identifying which '
+                 'institutions receive the most funding.',
+  'section': 'accessibility'},
+ {'code': "data['funding'] = pd.to_numeric(data['funding'], errors='coerce')\n"
+          '\n'
+          "data = data[pd.notna(data['funding'])]\n"
+          '\n'
+          'funding_by_institution = '
+          "data.groupby('institution')['funding'].sum().reset_index()\n"
+          '\n'
+          'funding_by_institution = '
+          "funding_by_institution.sort_values(by='funding', ascending=False)",
+  'explanation': 'This section of the code performs several transformations on '
+                 "the input DataFrame. First, it converts the 'funding' column "
+                 'to numeric values, coercing any non-numeric entries to NaN. '
+                 "Then, it removes rows with NaN values in the 'funding' "
+                 "column. Next, it groups the data by 'institution' and sums "
+                 'the funding amounts for each institution. Finally, it sorts '
+                 'the resulting DataFrame by the total funding in descending '
+                 'order.',
+  'section': 'transformation'},
+ {'code': "fig = px.bar(funding_by_institution, x='institution', y='funding', "
+          "color='institution', title='Institutional Funding Distribution')",
+  'explanation': 'This line of code creates a bar chart using Plotly Express. '
+                 "The 'x' parameter is set to 'institution', which means the "
+                 "institutions are plotted on the x-axis. The 'y' parameter is "
+                 "set to 'funding', indicating that funding amounts will be "
+                 "plotted on the y-axis. The 'color' parameter is set to "
+                 "'institution', meaning each institution will have a "
+                 "different color in the chart. A title, 'Institutional "
+                 "Funding Distribution', is also added to the plot.",
+  'section': 'visualization'}]
+2026-06-13 22:13:26 - __main__ - INFO - ##################################################
+2026-06-13 22:13:26 - __main__ - INFO - Visualizing Goal No. 3...
+2026-06-13 22:13:26 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:26 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:26 - choreographer.browsers.chromium - INFO - Chromium init'ed with kwargs {}
+2026-06-13 22:13:26 - choreographer.browsers.chromium - INFO - Found chromium path: /usr/bin/google-chrome
+2026-06-13 22:13:26 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmp25566p9v.
+2026-06-13 22:13:26 - choreographer.browser_async - INFO - Opening browser.
+2026-06-13 22:13:26 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmpx05xkhtu.
+2026-06-13 22:13:26 - choreographer.browsers.chromium - INFO - Temporary directory at: /tmp/tmpx05xkhtu
+2026-06-13 22:13:26 - kaleido.kaleido - INFO - Conforming 1 to file:///tmp/tmp25566p9v/index.html
+2026-06-13 22:13:27 - kaleido.kaleido - INFO - Getting tab from queue (has 1)
+2026-06-13 22:13:27 - kaleido.kaleido - INFO - Got F122
+2026-06-13 22:13:27 - kaleido.kaleido - INFO - Reloading tab F122 before return.
+2026-06-13 22:13:27 - kaleido.kaleido - INFO - Putting tab F122 back (queue size: 0).
+2026-06-13 22:13:27 - kaleido.kaleido - INFO - Waiting for all cleanups to finish.
+2026-06-13 22:13:27 - kaleido.kaleido - INFO - Exiting Kaleido.
+2026-06-13 22:13:27 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:27 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:27 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:27 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:27 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:27 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:27 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:27 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:27 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:27 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:27 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:27 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:27 - __main__ - INFO - Charts for Goal No. 3:
+2026-06-13 22:13:27 - __main__ - INFO - Explanations:
+2026-06-13 22:13:27 - __main__ - INFO - Explanation No. 1: 
+[{'code': "fig = px.scatter(data, x='Financial_year', y='funding', "
+          'color=\'Round\', title="Distribution of Funding Across Rounds and '
+          'Financial Years")',
+  'explanation': 'The chart is a scatter plot with the following accessibility '
+                 'features:\n'
+                 "- The x-axis represents 'Financial_year' which is displayed "
+                 'as years.\n'
+                 "- The y-axis represents 'funding' values, indicating the "
+                 'amount of funding received in each year.\n'
+                 '- Each point on the scatter plot is colored according to the '
+                 "'Round', allowing for easy differentiation between different "
+                 'funding rounds.\n'
+                 "- The title 'Distribution of Funding Across Rounds and "
+                 "Financial Years' provides context about the data being "
+                 'visualized.\n'
+                 '- The goal of this chart is to show how funding has been '
+                 'distributed across different financial years and funding '
+                 'rounds, highlighting any trends or patterns.',
+  'section': 'accessibility'},
+ {'code': "data['Financial_year'] = pd.to_datetime(data['Financial_year'], "
+          "errors='coerce')\n"
+          "data = data[pd.notna(data['Financial_year'])]\n"
+          "data['Financial_year'] = data['Financial_year'].dt.year",
+  'explanation': 'This section of the code performs the following '
+                 'transformations:\n'
+                 "- Converts the 'Financial_year' column to a datetime type, "
+                 'handling any invalid dates by coercing them to NaT '
+                 '(Not-a-Time).\n'
+                 "- Removes rows where 'Financial_year' is NaT, ensuring only "
+                 'valid financial years are included in the analysis.\n'
+                 '- Extracts the year from the datetime object and stores it '
+                 "back into the 'Financial_year' column as an integer, "
+                 'simplifying the data for plotting.',
+  'section': 'transformation'},
+ {'code': "fig = px.scatter(data, x='Financial_year', y='funding', "
+          'color=\'Round\', title="Distribution of Funding Across Rounds and '
+          'Financial Years")\n'
+          'return fig',
+  'explanation': 'This section creates the visualization:\n'
+                 '- `px.scatter` is used to create a scatter plot.\n'
+                 "- The 'x' parameter is set to 'Financial_year', which "
+                 'represents the years on the x-axis.\n'
+                 "- The 'y' parameter is set to 'funding', representing the "
+                 'funding amounts on the y-axis.\n'
+                 "- The 'color' parameter is set to 'Round', allowing each "
+                 'data point to be colored according to its funding round, '
+                 'making it easier to distinguish between different rounds '
+                 'visually.\n'
+                 "- A title 'Distribution of Funding Across Rounds and "
+                 "Financial Years' is added to provide context for the chart.\n"
+                 '- Finally, the figure object `fig` is returned.',
+  'section': 'visualization'}]
+2026-06-13 22:13:27 - __main__ - INFO - ##################################################
+2026-06-13 22:13:27 - __main__ - INFO - Visualizing Goal No. 4...
+2026-06-13 22:13:27 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:27 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:27 - __main__ - INFO - No charts generated for Goal No. 4.
+2026-06-13 22:13:27 - __main__ - INFO - Visualizing Goal No. 5...
+2026-06-13 22:13:27 - __main__ - INFO - No charts generated for Goal No. 5.
+2026-06-13 22:13:27 - __main__ - INFO - Visualizing Goal No. 6...
+2026-06-13 22:13:27 - __main__ - INFO - No charts generated for Goal No. 6.
+2026-06-13 22:13:27 - __main__ - INFO - Visualizing Goal No. 7...
+2026-06-13 22:13:27 - choreographer.browsers.chromium - INFO - Chromium init'ed with kwargs {}
+2026-06-13 22:13:27 - choreographer.browsers.chromium - INFO - Found chromium path: /usr/bin/google-chrome
+2026-06-13 22:13:27 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmpyr1fsfb9.
+2026-06-13 22:13:27 - choreographer.browser_async - INFO - Opening browser.
+2026-06-13 22:13:27 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmpdhexebsl.
+2026-06-13 22:13:27 - choreographer.browsers.chromium - INFO - Temporary directory at: /tmp/tmpdhexebsl
+2026-06-13 22:13:27 - kaleido.kaleido - INFO - Conforming 1 to file:///tmp/tmpyr1fsfb9/index.html
+2026-06-13 22:13:28 - kaleido.kaleido - INFO - Getting tab from queue (has 1)
+2026-06-13 22:13:28 - kaleido.kaleido - INFO - Got E36B
+2026-06-13 22:13:28 - kaleido.kaleido - INFO - Reloading tab E36B before return.
+2026-06-13 22:13:28 - kaleido.kaleido - INFO - Putting tab E36B back (queue size: 0).
+2026-06-13 22:13:28 - kaleido.kaleido - INFO - Waiting for all cleanups to finish.
+2026-06-13 22:13:28 - kaleido.kaleido - INFO - Exiting Kaleido.
+2026-06-13 22:13:28 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:28 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:28 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:28 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:28 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:28 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:28 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:28 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:28 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:28 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:28 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:28 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:28 - __main__ - INFO - Charts for Goal No. 7:
+2026-06-13 22:13:28 - __main__ - INFO - Explanations:
+2026-06-13 22:13:28 - __main__ - INFO - Explanation No. 1: 
+[{'code': "fig = px.scatter(data, x='duration', y='funding', color='areas', "
+          "title='Relationship between Funding and Duration for Projects in "
+          "Each Area')",
+  'explanation': 'The chart is a scatter plot with the following accessibility '
+                 'features: \n'
+                 "- The x-axis represents 'duration' of projects.\n"
+                 "- The y-axis represents the 'funding' amount for each "
+                 'project.\n'
+                 '- Different colors represent different areas, allowing '
+                 'viewers to easily identify and compare data points across '
+                 'various categories. \n'
+                 '- The title provides context about the relationship being '
+                 'visualized between funding and duration in relation to '
+                 'project areas. \n'
+                 '- The goal of this chart is to show how funding varies with '
+                 'the duration of projects within each area. \n'
+                 '- Main insights include identifying trends, outliers, or '
+                 'patterns in the data based on the color-coding.',
+  'section': 'accessibility'},
+ {'code': "data['duration'] = pd.to_numeric(data['duration'], "
+          "errors='coerce')\n"
+          "data['funding'] = pd.to_numeric(data['funding'], errors='coerce')\n"
+          "data = data.dropna(subset=['duration', 'funding'])\n"
+          "data['areas'] = pd.Categorical(data['areas'])",
+  'explanation': 'This section of the code performs several transformations on '
+                 'the input DataFrame: \n'
+                 "- Converts the 'duration' and 'funding' columns to numeric "
+                 'types, coercing any non-numeric values into NaNs. \n'
+                 "- Drops rows with missing or invalid data in both 'duration' "
+                 "and 'funding'. \n"
+                 "- Converts the 'areas' column to a categorical type for "
+                 'better handling during plotting.',
+  'section': 'transformation'},
+ {'code': "fig = px.scatter(data, x='duration', y='funding', color='areas', "
+          "title='Relationship between Funding and Duration for Projects in "
+          "Each Area')",
+  'explanation': 'This line of code creates the scatter plot visualization: \n'
+                 '- It uses Plotly Express to generate a scatter plot. \n'
+                 "- The 'x' parameter is set to 'duration', which will be "
+                 'plotted on the x-axis. \n'
+                 "- The 'y' parameter is set to 'funding', which will be "
+                 'plotted on the y-axis. \n'
+                 "- The 'color' parameter is set to 'areas', meaning that each "
+                 "data point's color corresponds to its area, facilitating "
+                 'easy comparison across different categories. \n'
+                 '- A title is provided for clarity and context.',
+  'section': 'visualization'}]
+2026-06-13 22:13:28 - __main__ - INFO - ##################################################
+2026-06-13 22:13:28 - __main__ - INFO - Visualizing Goal No. 8...
+2026-06-13 22:13:28 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:28 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:28 - choreographer.browsers.chromium - INFO - Chromium init'ed with kwargs {}
+2026-06-13 22:13:28 - choreographer.browsers.chromium - INFO - Found chromium path: /usr/bin/google-chrome
+2026-06-13 22:13:28 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmpw1mtabo0.
+2026-06-13 22:13:28 - choreographer.browser_async - INFO - Opening browser.
+2026-06-13 22:13:28 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmp8z46ruor.
+2026-06-13 22:13:28 - choreographer.browsers.chromium - INFO - Temporary directory at: /tmp/tmp8z46ruor
+2026-06-13 22:13:29 - kaleido.kaleido - INFO - Conforming 1 to file:///tmp/tmpw1mtabo0/index.html
+2026-06-13 22:13:29 - kaleido.kaleido - INFO - Getting tab from queue (has 1)
+2026-06-13 22:13:29 - kaleido.kaleido - INFO - Got CA5A
+2026-06-13 22:13:30 - kaleido.kaleido - INFO - Reloading tab CA5A before return.
+2026-06-13 22:13:30 - kaleido.kaleido - INFO - Putting tab CA5A back (queue size: 0).
+2026-06-13 22:13:30 - kaleido.kaleido - INFO - Waiting for all cleanups to finish.
+2026-06-13 22:13:30 - kaleido.kaleido - INFO - Exiting Kaleido.
+2026-06-13 22:13:30 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:30 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:30 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:30 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:30 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:30 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:30 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:30 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:30 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:30 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:30 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:30 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:30 - __main__ - INFO - Charts for Goal No. 8:
+2026-06-13 22:13:30 - __main__ - INFO - Explanations:
+2026-06-13 22:13:30 - __main__ - INFO - Explanation No. 1: 
+[{'code': "fig = px.density_heatmap(aggregated_data, x='Financial_year', "
+          "y='Round', z='funding', color_continuous_scale='Blues', "
+          'title="Institutional Funding Across Different Rounds and Financial '
+          'Years")',
+  'explanation': 'The accessibility section describes the physical appearance '
+                 'of the chart. The heatmap uses a continuous color scale '
+                 "'Blues' to represent funding levels, with darker shades "
+                 'indicating higher funding. The x-axis represents different '
+                 'financial years, while the y-axis categorizes the rounds. '
+                 'The title clearly states that the chart shows institutional '
+                 'funding across various rounds and financial years.',
+  'section': 'accessibility'},
+ {'code': "data['Financial_year'] = pd.to_datetime(data['Financial_year'], "
+          "errors='coerce')\n"
+          "    data = data[pd.notna(data['Financial_year'])]\n"
+          '\n'
+          '    # Convert Round to categorical for better plotting\n'
+          "data['Round'] = data['Round'].astype('category')\n"
+          '\n'
+          '    # Aggregate funding by institution, Financial_year, and Round\n'
+          "aggregated_data = data.groupby(['institution', 'Financial_year', "
+          "'Round']).sum().reset_index()",
+  'explanation': 'The transformation section details the steps taken to '
+                 'prepare the data for visualization. First, it converts the '
+                 "'Financial_year' column to datetime type and removes any "
+                 'rows with invalid dates using `pd.to_datetime` and '
+                 "`pd.notna`. Next, it converts the 'Round' column into a "
+                 'categorical variable for better plotting. Finally, it '
+                 'aggregates funding by institution, financial year, and round '
+                 'using the `groupby` method.',
+  'section': 'transformation'},
+ {'code': "fig = px.density_heatmap(aggregated_data, x='Financial_year', "
+          "y='Round', z='funding', color_continuous_scale='Blues', "
+          'title="Institutional Funding Across Different Rounds and Financial '
+          'Years")',
+  'explanation': 'The visualization section explains the code that creates or '
+                 'modifies the heatmap. The `px.density_heatmap` function is '
+                 "used to generate a heatmap where 'Financial_year' is plotted "
+                 "on the x-axis, 'Round' on the y-axis, and funding levels are "
+                 "represented by color intensity using the 'Blues' scale. A "
+                 "title is added to provide context about the chart's content.",
+  'section': 'visualization'}]
+2026-06-13 22:13:30 - __main__ - INFO - ##################################################
+2026-06-13 22:13:30 - __main__ - INFO - Visualizing Goal No. 9...
+2026-06-13 22:13:30 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:30 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:30 - choreographer.browsers.chromium - INFO - Chromium init'ed with kwargs {}
+2026-06-13 22:13:30 - choreographer.browsers.chromium - INFO - Found chromium path: /usr/bin/google-chrome
+2026-06-13 22:13:30 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmp3_1mc123.
+2026-06-13 22:13:30 - choreographer.browser_async - INFO - Opening browser.
+2026-06-13 22:13:30 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmpa2i8oyt7.
+2026-06-13 22:13:30 - choreographer.browsers.chromium - INFO - Temporary directory at: /tmp/tmpa2i8oyt7
+2026-06-13 22:13:30 - kaleido.kaleido - INFO - Conforming 1 to file:///tmp/tmp3_1mc123/index.html
+2026-06-13 22:13:31 - kaleido.kaleido - INFO - Getting tab from queue (has 1)
+2026-06-13 22:13:31 - kaleido.kaleido - INFO - Got 6A9E
+2026-06-13 22:13:31 - kaleido.kaleido - INFO - Reloading tab 6A9E before return.
+2026-06-13 22:13:31 - kaleido.kaleido - INFO - Putting tab 6A9E back (queue size: 0).
+2026-06-13 22:13:31 - kaleido.kaleido - INFO - Waiting for all cleanups to finish.
+2026-06-13 22:13:31 - kaleido.kaleido - INFO - Exiting Kaleido.
+2026-06-13 22:13:31 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:31 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:31 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:31 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:31 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:31 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:31 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:31 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:31 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:31 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:31 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:31 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:31 - __main__ - INFO - Charts for Goal No. 9:
+2026-06-13 22:13:31 - __main__ - INFO - Explanations:
+2026-06-13 22:13:31 - __main__ - INFO - Explanation No. 1: 
+[{'code': 'None',
+  'explanation': 'The chart is a line plot that visually represents total '
+                 'funding over time by round. It uses different colors to '
+                 'distinguish between different funding rounds, making it easy '
+                 'to compare trends across rounds. The x-axis displays the '
+                 'financial year, and the y-axis shows the total funding '
+                 "amount. The title of the chart is 'Total Funding Over Time "
+                 "by Round', providing a clear context for the data being "
+                 'visualized.',
+  'section': 'accessibility'},
+ {'code': "data['Year'] = pd.to_datetime(data['Year'], format='%Y', "
+          "errors='coerce')\n"
+          "    data = data[pd.notna(data['Year'])]",
+  'explanation': "This code snippet converts the 'Year' column to a datetime "
+                 'type and removes any rows where the year is not valid (i.e., '
+                 'NaT values). This ensures that only complete years are '
+                 'included in the analysis, improving the accuracy of the '
+                 'visualization.',
+  'section': 'transformation'},
+ {'code': "fig = px.line(data, x='Year', y='funding', color='Round', "
+          'title="Total Funding Over Time by Round", labels={\'Year\': '
+          "'Financial Year', 'funding': 'Total Funding'})\n"
+          '    return fig',
+  'explanation': 'This code creates a line plot using Plotly Express. The `x` '
+                 "parameter is set to 'Year' to use the financial year as the "
+                 "x-axis, while the `y` parameter is set to 'funding' to "
+                 'represent funding amounts on the y-axis. The `color` '
+                 "parameter is set to 'Round', which means different rounds of "
+                 'funding will be represented by different colors in the plot. '
+                 'Additional parameters are used to set the title and axis '
+                 'labels for better readability.',
+  'section': 'visualization'}]
+2026-06-13 22:13:31 - __main__ - INFO - ##################################################
+2026-06-13 22:13:31 - __main__ - INFO - Visualizing Goal No. 10...
+2026-06-13 22:13:31 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:31 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:31 - choreographer.browsers.chromium - INFO - Chromium init'ed with kwargs {}
+2026-06-13 22:13:31 - choreographer.browsers.chromium - INFO - Found chromium path: /usr/bin/google-chrome
+2026-06-13 22:13:31 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmp2kz0_k_t.
+2026-06-13 22:13:31 - choreographer.browser_async - INFO - Opening browser.
+2026-06-13 22:13:31 - choreographer.utils._tmpfile - INFO - Temp directory created: /tmp/tmpyqp6waqa.
+2026-06-13 22:13:31 - choreographer.browsers.chromium - INFO - Temporary directory at: /tmp/tmpyqp6waqa
+2026-06-13 22:13:31 - kaleido.kaleido - INFO - Conforming 1 to file:///tmp/tmp2kz0_k_t/index.html
+2026-06-13 22:13:32 - kaleido.kaleido - INFO - Getting tab from queue (has 1)
+2026-06-13 22:13:32 - kaleido.kaleido - INFO - Got 6442
+2026-06-13 22:13:32 - kaleido.kaleido - INFO - Reloading tab 6442 before return.
+2026-06-13 22:13:32 - kaleido.kaleido - INFO - Putting tab 6442 back (queue size: 0).
+2026-06-13 22:13:32 - kaleido.kaleido - INFO - Waiting for all cleanups to finish.
+2026-06-13 22:13:32 - kaleido.kaleido - INFO - Exiting Kaleido.
+2026-06-13 22:13:32 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:32 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:32 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:32 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:32 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:32 - choreographer.browser_async - INFO - Closing browser.
+2026-06-13 22:13:32 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:32 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:32 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:32 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.
+2026-06-13 22:13:32 - kaleido.kaleido - INFO - Cancelling tasks.
+2026-06-13 22:13:32 - kaleido.kaleido - INFO - Exiting Kaleido/Choreo.
+2026-06-13 22:13:32 - __main__ - INFO - Charts for Goal No. 10:
+2026-06-13 22:13:32 - __main__ - INFO - Explanations:
+2026-06-13 22:13:32 - __main__ - INFO - Explanation No. 1: 
+[{'code': "fig = px.pie(data, names='areas', "
+          "values=data['title'].value_counts(), title='Distribution of Project "
+          "Titles Across Different Areas')",
+  'explanation': 'The chart is a pie plot with the following accessibility '
+                 'features: \n'
+                 '- The pie chart uses different colors for each slice to '
+                 "represent the 'areas' in the dataset. \n"
+                 "- Each slice's size corresponds to the count of project "
+                 'titles within that area, providing a visual representation '
+                 'of distribution.\n'
+                 "- The title of the chart is set to 'Distribution of Project "
+                 "Titles Across Different Areas', which clearly describes the "
+                 'purpose and context of the visualization. \n'
+                 '- The main insights from this chart are: areas with more '
+                 'project titles have larger slices, indicating their higher '
+                 'frequency in the dataset.',
+  'section': 'accessibility'},
+ {'code': "values=data['title'].value_counts()",
+  'explanation': 'This line applies data transformation by counting the '
+                 "occurrences of each unique value in the 'title' column. The "
+                 'result is a Series where the index represents project titles '
+                 'and the values represent their counts, which are used as the '
+                 'size of the pie slices.',
+  'section': 'transformation'},
+ {'code': "fig = px.pie(data, names='areas', "
+          "values=data['title'].value_counts(), title='Distribution of Project "
+          "Titles Across Different Areas')\n"
+          'return fig',
+  'explanation': 'This code creates and returns a pie chart using Plotly '
+                 'Express. \n'
+                 '- `px.pie()` is the function that generates the pie plot.\n'
+                 '- The `names` parameter specifies the categories (areas) to '
+                 'be used as labels for each slice of the pie.\n'
+                 '- The `values` parameter uses the transformed data from '
+                 "`data['title'].value_counts()` to determine the size of each "
+                 'slice, representing the count of project titles in each '
+                 'area.\n'
+                 '- The `title` parameter sets the title of the chart, '
+                 'providing context and clarity.',
+  'section': 'visualization'}]
+2026-06-13 22:13:32 - __main__ - INFO - ##################################################
+2026-06-13 22:13:32 - choreographer.utils._tmpfile - INFO - TemporaryDirectory.cleanup() worked.
+2026-06-13 22:13:32 - choreographer.utils._tmpfile - INFO - shutil.rmtree worked.

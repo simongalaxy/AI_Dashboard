@@ -1,16 +1,18 @@
 import os
 import pandas as pd
 from lida import Manager, TextGenerationConfig, llm
-from pprint import pprint
+from pprint import pformat
 
 from src.Settings import settings
+from src.logger import Logger
 
 # load env settings. 
 os.environ["OPENAI_BASE_URL"] = settings.openai_api_base
 os.environ["OPENAI_API_KEY"] = settings.openai_api_key
 
 class DataAnalyzer:
-    def __init__(self):
+    def __init__(self, logger: Logger):
+        self.logger = logger
         self.text_gen = llm(
             provider=settings.model_provider,
             model=settings.model_name
@@ -26,11 +28,10 @@ class DataAnalyzer:
     def summarize_df(self, df: pd.DataFrame) -> dict:
         summary = self.lida.summarize(df)
         
-        print(f"Data Type of Summary: {type(summary)}")
-        print("Summary of the DataFrame:")
-        pprint(summary)
-        print("#" * 50)
-        print("\n")
+        self.logger.info(f"Data Type of Summary: {type(summary)}")
+        self.logger.info("Summary of the DataFrame: \n%s", pformat(summary))
+        self.logger.info("#" * 50)
+        self.logger.info("\n")
         
         return summary
     
@@ -43,14 +44,14 @@ class DataAnalyzer:
             persona=persona
         )
         
-        print(f"Data Type of Goals: {type(goals)}")
+        self.logger.info(f"Data Type of Goals: {type(goals)}")
         
         # show goals.
-        print("Generated Goals:")
+        self.logger.info("Generated Goals:")
         for i, goal in enumerate(goals, start=1):
-            print(f"Goal No. {i}:")
-            print(goal)
-            print("#" * 50)
+            self.logger.info(f"Goal No. {i}:")
+            self.logger.info(goal)
+            self.logger.info("#" * 50)
         
         return goals
     
@@ -62,11 +63,10 @@ class DataAnalyzer:
             code = chart.code
         )
 
-        print("Explanations:")
+        self.logger.info("Explanations:")
         for i, explanation in enumerate(explanations, start=1):
-            print(f"Explanation No. {i}:")
-            pprint(explanation)
-            print("#" * 50)
+            self.logger.info(f"Explanation No. {i}: \n%s", pformat(explanation))
+            self.logger.info("#" * 50)
         
         return explanations
     
@@ -76,7 +76,7 @@ class DataAnalyzer:
         all_charts = []
         
         for i, goal in enumerate(goals, start=1):
-            print(f"Visualizing Goal No. {i}...")
+            self.logger.info(f"Visualizing Goal No. {i}...")
             try:
                 charts = self.lida.visualize(
                     summary=summary, 
@@ -85,15 +85,15 @@ class DataAnalyzer:
                     textgen_config=self.textgen_config
                 )
                 if charts:
-                    print(f"Charts for Goal No. {i}:")
+                    self.logger.info(f"Charts for Goal No. {i}:")
                     for chart in charts:
-                        print(chart)
+                        # print(chart)
                         explanations = self.explain_goal(chart)
                         all_charts.append(chart)
                 else:
-                    print(f"No charts generated for Goal No. {i}.")
+                    self.logger.info(f"No charts generated for Goal No. {i}.")
             except Exception as e:
-                print(f"Error visualizing Goal No. {i}: {e}")
+                self.logger.info(f"Error visualizing Goal No. {i}: {e}")
         
         return all_charts
     

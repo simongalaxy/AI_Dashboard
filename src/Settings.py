@@ -12,10 +12,10 @@ class Settings(BaseSettings):
     model_provider: str
     openai_api_base: str
     openai_api_key: str
-
-    # model_provider: str
-    # huggingface_token: str
-    # huggingface_model: str
+    
+    # logger settings.
+    log_path: str
+    log_level: str
     
     # pydantic settings config.
     model_config = SettingsConfigDict(

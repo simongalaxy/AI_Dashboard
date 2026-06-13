@@ -5,7 +5,7 @@ from pprint import pprint
 from src.DataProcessor import load_data_from_xml, preprocess_data, show_data_info
 from src.DataAnalyzer import DataAnalyzer
 from src.Settings import settings
-
+from src.logger import Logger
 
 
 def main():
@@ -13,6 +13,9 @@ def main():
     # load settings.
     print("Loading settings...")
     pprint(settings.model_dump())
+
+    # initiate logger.
+    logger = Logger(__name__).get_logger()
 
     # load data from the XML file.
     url = "https://www.cepu.gov.hk/en/filestore/ppr-granted.xml"
@@ -26,7 +29,7 @@ def main():
     persona = "An Operationn Manager who monitors overall situation of a funding scheme"
     
     # initialize the DataAnalyzer.
-    analyzer = DataAnalyzer()
+    analyzer = DataAnalyzer(logger=logger)
     
     # summarize the data.
     summary = analyzer.summarize_df(df)
